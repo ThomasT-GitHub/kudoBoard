@@ -1,5 +1,6 @@
 import { boards, cards } from '../../../../backend/data' // Simulates API fetch
 import { useParams } from 'react-router'
+import CreateImageCardButton from './CreateImageCardButton';
 
 
 function BoardPage() {
@@ -17,7 +18,7 @@ function BoardPage() {
             <header className="BoardPage-banner">
                 <h1>KUDOBOARD</h1>
                 <h2>{board.title}</h2>
-
+                <CreateImageCardButton />
             </header>
 
             <section className="BoardPage-body">
