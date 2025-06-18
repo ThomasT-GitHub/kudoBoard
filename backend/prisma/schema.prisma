@@ -19,5 +19,6 @@ model Board {
   title         String
   category      String
   author        String?
+  imageCards    Json
   createdAt DateTime @default(now())
 }
