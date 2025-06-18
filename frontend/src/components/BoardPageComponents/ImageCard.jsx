@@ -1,3 +1,5 @@
+import UpvoteButton from './UpvoteButton'
+import DeleteCardButton from './DeleteCardButton'
 import './BoardPageComponentStyles/Card.css'
 
 function ImageCard({ imageCard }) {
@@ -11,7 +13,8 @@ function ImageCard({ imageCard }) {
                 </section>
 
                 <section className="Card-buttons">
-
+                    <UpvoteButton upvotes={imageCard.upvotes}/>
+                    <DeleteCardButton />
                 </section>
             </section>
         </>
