@@ -41,8 +41,8 @@ Deployed Application (**required**): [Kudos Board Deployed Site]()
     - [ ] Clicks the Submit/Search button
   - [x] User can delete all text from the text input field.
   - [ ] When all text is cleared from the text input field, all boards are displayed in a grid view
-- [ ] **View Board**
-  - [ ] Users can click on a board in the grid view to navigate to a new page containing that board's details.
+- [x] **View Board**
+  - [x] Users can click on a board in the grid view to navigate to a new page containing that board's details.
 - [ ] **Add New Board**
   - [ ] Users can create a new board on the home page.
   - [ ] When creating a new board, users can specify the:
@@ -57,13 +57,13 @@ Deployed Application (**required**): [Kudos Board Deployed Site]()
 
 ##### Board Page
 
-- [ ] **Display Cards**
-  - [ ] For a given board, the board's page displays a list of all cards for that board in a grid view.
-  - [ ] For each card should displayed, users can see the card's:
-    - [ ] Message
-    - [ ] Gif
-    - [ ] Number of upvotes
-    - [ ] Delete button
+- [x] **Display Cards**
+  - [x] For a given board, the board's page displays a list of all cards for that board in a grid view.
+  - [x] For each card should displayed, users can see the card's:
+    - [x] Message
+    - [x] Gif
+    - [x] Number of upvotes
+    - [x] Delete button
 - [ ] **Add New Card**
   - [ ] Users can make a new card associated with the current board.
   - [ ] To successfully create a new card, users must specify the following:

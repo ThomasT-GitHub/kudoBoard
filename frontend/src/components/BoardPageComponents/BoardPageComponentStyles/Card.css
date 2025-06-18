@@ -1,0 +1,30 @@
+.Card-view {
+    max-width: 20vw;
+    min-width: 250px;
+    max-height: 450px;
+    min-height: 30vh;
+
+    border-radius: 16px;
+    border: 1.5px black solid;
+
+    margin: 8px
+}
+
+.Card-title {
+    font-size: 1em;
+}
+
+.Card-message {
+    font-size: 1em;
+}
+
+.Card-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Card-image {
+    max-height: 225px;
+}
