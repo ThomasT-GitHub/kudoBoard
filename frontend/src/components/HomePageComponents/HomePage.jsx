@@ -1,6 +1,7 @@
 import { boards } from '../../../../backend/data'
+import BoardCardGrid from './BoardCardGrid'
 import BoardGridFilter from './BoardGridFilter'
-import BoardGridSearch from './BoardGridSearch';
+import BoardGridSearch from './BoardGridSearch'
 import './HomePageComponentStyles/HomePage.css'
 
 
@@ -14,7 +15,7 @@ function HomePage() {
             </header>
 
             <section className="HomePage-Body">
-
+                <BoardCardGrid boardCardList={Object.values(boards)} />
             </section>
 
             <footer className="HomePage-Footer">
