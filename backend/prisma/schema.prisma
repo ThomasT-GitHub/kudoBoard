@@ -14,10 +14,22 @@ datasource db {
 }
 
 model Board {
-  id            Int @id @default(autoincrement())
-  imageSource   String
+  id     Int         @id @default(autoincrement())
+  imageSource String
+  title       String
+  category    String
+  author      String?
+  createdAt   DateTime    @default(now())
+  imageCard   imageCard[]
+}
+
+model imageCard {
+  id            Int     @id @default(autoincrement())
   title         String
-  category      String
+  message       String
+  imageSource   String
+  upvotes       Int
   author        String?
-  createdAt DateTime @default(now())
+  parentBoard   Board   @relation(fields: [parentBoardId], references: [id])
+  parentBoardId Int
 }
