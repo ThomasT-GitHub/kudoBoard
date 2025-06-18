@@ -8,7 +8,7 @@ function HomePage() {
     return (
         <section className="HomePage-View">
             <header className="HomePage-Banner">
-                <h1>KUDOBOARD</h1>
+                <h1>KUDOSBOARD</h1>
                 <BoardGridSearch />
                 <BoardGridFilter />
             </header>
