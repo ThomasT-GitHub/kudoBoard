@@ -20,16 +20,16 @@ model Board {
   category    String
   author      String?
   createdAt   DateTime    @default(now())
-  imageCard   imageCard[]
+  imageCards   ImageCard[]
 }
 
-model imageCard {
+model ImageCard {
   id            Int     @id @default(autoincrement())
   title         String
   message       String
   imageSource   String
-  upvotes       Int
+  upvotes       Int     @default(0)
   author        String?
-  parentBoard   Board   @relation(fields: [parentBoardId], references: [id])
+  parentBoard   Board   @relation(fields: [parentBoardId], references: [id], onDelete: Cascade)
   parentBoardId Int
 }

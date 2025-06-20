@@ -208,11 +208,11 @@ const cards = [
 async function main() {
   // Seed boards
   for (const board of boards) {
-    await prisma.board.create({ data: board });
+    await prisma.Board.create({ data: board });
   }
 
   for (const card of cards) {
-    await prisma.imageCard.create({ data: card });
+    await prisma.ImageCard.create({ data: card });
   }
 
   console.log("Database seeded successfully!");
