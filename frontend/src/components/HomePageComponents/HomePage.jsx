@@ -7,20 +7,20 @@ import { useEffect, useState } from 'react'
 
 function HomePage() {
     const [boards, setBoards] = useState([])
-
+    const [refreshBoards, setRefreshBoards] = useState(0);
     useEffect(() => {
         (async () => {
             const fetchedBoards = await getBoards();
             setBoards(fetchedBoards);
         })();
-    }, []);
+    }, [refreshBoards]);
 
     return (
         <section className="HomePage-View">
             <header className="HomePage-Banner">
                 <h1>KUDOBOARD</h1>
-                <BoardGridSearch boards={boards} setBoards={setBoards}/>
-                <BoardGridFilter boards={boards} setBoards={setBoards}/>
+                <BoardGridSearch boards={boards} setBoards={setBoards} setRefreshBoards={setRefreshBoards} />
+                <BoardGridFilter boards={boards} setBoards={setBoards} setRefreshBoards={setRefreshBoards} />
             </header>
 
             <section className="HomePage-Body">
