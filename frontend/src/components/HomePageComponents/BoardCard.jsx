@@ -2,18 +2,17 @@ import ViewBoardButton from './ViewBoardButton'
 import DeleteBoardButton from './DeleteBoardButton'
 import './HomePageComponentStyles/BoardCard.css'
 
-function BoardCard({ boardCard }) {
-
+function BoardCard({ board, setBoards }) {
     return (
         <>
             <section className="BoardCard-view">
-                <img src={boardCard.imageSource} alt={boardCard.title} />
-                <h2 className="BoardCard-title">{boardCard.title}</h2>
-                <p className="BoardCard-category">{boardCard.category}</p>
+                <img src={board.imageSource} alt={board.title} />
+                <h2 className="BoardCard-title">{board.title}</h2>
+                <p className="BoardCard-category">{board.category}</p>
 
                 <section className="BoardCard-buttons">
-                    <ViewBoardButton id={boardCard.id} />
-                    <DeleteBoardButton id={boardCard.id} />
+                    <ViewBoardButton boardId={board.id} boardTitle={board.title} />
+                    <DeleteBoardButton boardId={board.id} setBoards={setBoards} />
                 </section>
             </section>
         </>

@@ -1,13 +1,13 @@
 import BoardCard from './BoardCard'
 import './HomePageComponentStyles/BoardCardGrid.css'
 
-const BoardCardGrid = ({ boardCardList }) => {
+const BoardCardGrid = ({ boards, setBoards}) => {
 
     return (
         <>
             <section className="BoardCardGrid-view">
-                {boardCardList.map((boardCard) => {
-                    return <BoardCard key={boardCard.id} boardCard={boardCard}/>
+                {boards.map((board) => {
+                    return <BoardCard key={board.id} board={board} setBoards={setBoards}/>
                 })}
             </section>
         </>

@@ -83,7 +83,7 @@ server.delete('/api/boards/:boardId', async (req, res, next) => {
 server.get('/api/boards/:boardId/imageCards/', async (req, res, next) => {
     const parentBoardId = Number(req.params.boardId);
     try {
-        const selectedImageCards = await prisma.imageCard.findMany({ where: { parentBoardId: parentBoardId } });
+        const selectedImageCards = await prisma.imageCard.findMany({ where: { parentBoardId: parentBoardId }, orderBy: {id: "asc"} });
         if (selectedImageCards.length) {
             res.json(selectedImageCards);
         } else {
