@@ -19,7 +19,7 @@ export const getBoards = async () => {
         }
 
         const data = await response.json();
-        return data
+        return Object.values(data);
     } catch (err) {
         console.error(err);
     }

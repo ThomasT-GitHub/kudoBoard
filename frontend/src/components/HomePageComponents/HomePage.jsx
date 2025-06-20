@@ -1,12 +1,19 @@
-import { boards } from '../../../../backend/data'
 import BoardCardGrid from './BoardCardGrid'
 import BoardGridFilter from './BoardGridFilter'
 import BoardGridSearch from './BoardGridSearch'
 import './HomePageComponentStyles/HomePage.css'
+import { getBoards } from '../../../utils/utils'
+import { useEffect, useState } from 'react'
 
 function HomePage() {
+    const [boards, setBoards] = useState([])
 
-
+    useEffect(() => {
+        (async () => {
+            const fetchedBoards = await getBoards();
+            setBoards(fetchedBoards);
+        })();
+    }, []);
 
     return (
         <section className="HomePage-View">
@@ -17,7 +24,7 @@ function HomePage() {
             </header>
 
             <section className="HomePage-Body">
-                <BoardCardGrid boardCardList={Object.values(boards)} />
+                <BoardCardGrid boardCardList={boards} />
             </section>
 
             <footer className="HomePage-Footer">
