@@ -1,5 +1,5 @@
 const API_URL = import.meta.env.VITE_API_URL;
-
+const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 /**
  * This function returns a list of boards
  */
@@ -53,22 +53,30 @@ export const getBoardById = async (boardId) => {
 
 /**
  * This function create a board
- * @param {String} title        The title of the board
- * @param {String} category     The category of the board
- * @param {String} imageSource  The source of the image/gif of the board
+ * @param {String} boardTitle        The title of the board
+ * @param {String} boardCategory     The category of the board
+ * @param {String} boardAuthor       The author of the board (if none, leave blank)
  */
-export const createBoard = async (title, category, imageSource) => {
+export const createBoard = async (boardTitle, boardCategory, boardAuthor) => {
     const url = `${API_URL}/boards/`;
+
+    const boardData = {
+        title: boardTitle,
+        category: boardCategory,
+        imageSource: `https://picsum.photos/seed/${Math.floor(Math.random() * 100)}/200/300`
+    }
+
+    if (boardAuthor.length) {
+        boardData.author = boardAuthor
+    }
+
     const options = {
         method: 'POST',
         headers: {
-            accept: 'application/json',
+            "Content-Type": 'application/json',
+            accept: 'application/json'
         },
-        body: JSON.stringify({
-            title: title,
-            category: category,
-            imageSource: imageSource
-        })
+        body: JSON.stringify(boardData)
     };
 
     try {
@@ -197,19 +205,28 @@ export const decrementImageCardUpvotes = async (boardId, imageCardId) => {
  * @param {String} title        The title of the image card
  * @param {String} message      The message of the imageCard
  * @param {String} imageSource  The source of the image/gif of the new imageCard
+ * @param {String} author       The author of the new imageCard
  */
-export const addImageCardToBoard = async (boardId, title, message, imageSource) => {
+export const addImageCardToBoard = async (boardId, title, message, imageSource, author) => {
     const url = `${API_URL}/boards/${boardId}/imageCards/`;
+
+    const imageCardData = {
+        title: title,
+        message: message,
+        imageSource: imageSource,
+    }
+
+    if (author.length) {
+        imageCardData.author = author
+    }
+
     const options = {
         method: 'POST',
         headers: {
+            "Content-Type": 'application/json',
             accept: 'application/json',
         },
-        body: JSON.stringify({
-            title: title,
-            message: message,
-            imageSource: imageSource
-        })
+        body: JSON.stringify(imageCardData)
     };
 
     try {
@@ -247,6 +264,26 @@ export const deleteImageCard = async (boardId, imageCardId) => {
 
         const data = await response.json();
         return data
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+/**
+ * This function returns an array of six gifs per a search query from giphy
+ * @param {string} searchQuery The query to search
+ */
+export const getSixGifsFromGiphy = async (searchQuery) => {
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${searchQuery}&limit=6`
+
+    try {
+        const response = await fetch(url);
+        if(!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data["data"];
     } catch (err) {
         console.error(err);
     }

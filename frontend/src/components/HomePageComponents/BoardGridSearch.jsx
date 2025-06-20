@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function BoardGridSearch() {
+function BoardGridSearch({ setBoards, setRefreshBoards }) {
     const [boardSearchQuery, setBoardSearchQuery] = useState("");
 
     const handleBoardSearchChange = (event) => {
@@ -8,11 +8,14 @@ function BoardGridSearch() {
     }
 
     const handleBoardSearchSubmit = () => {
-
+        setBoards((boards) => boards.filter((board) => board.title.toLowerCase().includes(boardSearchQuery.toLocaleLowerCase())));
     }
 
     const handleBoardSearchClear = () => {
         setBoardSearchQuery("");
+
+        // Increments refreshBoard value, which causes HomePage to set the boards to defaults
+        setRefreshBoards((previousValue) => previousValue + 1);
     }
 
     const handleBoardSearchEnter = (event) => {
