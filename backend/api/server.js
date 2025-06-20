@@ -1,4 +1,4 @@
-const { PrismaClient } = require("@prisma/client");
+const { PrismaClient } = require('../generated/prisma');
 const prisma = new PrismaClient();
 const express = require('express');
 const cors = require('cors');
