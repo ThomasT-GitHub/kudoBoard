@@ -21,7 +21,8 @@ function BoardGridFilter({ boards, setBoards, setRefreshBoards }) {
                 setRefreshBoards((previousValue) => previousValue + 1);
                 break;
             case BoardGridFilterOptions.RECENT:
-                setBoards(allBoards.filter((board) => board.category === "Recent"));
+                setBoards(allBoards.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).splice(0, 6));
+
                 break;
             case BoardGridFilterOptions.CELEBRATION:
                 setBoards(allBoards.filter((board) => board.category.toLowerCase() === BoardGridFilterOptions.CELEBRATION));
