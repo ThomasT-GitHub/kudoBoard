@@ -2,7 +2,7 @@
 
 Submitted by: **Thomas Trivino**
 
-Deployed Application (**required**): [Kudos Board Deployed Site]()
+Deployed Application (**required**): [Kudos Board Deployed Site](https://kudoboardfrontend.onrender.com/)
 
 ### Application Features
 
@@ -79,9 +79,9 @@ Deployed Application (**required**): [Kudos Board Deployed Site]()
 - [x] **Delete Card**
   - [x] Users can delete cards.
   - [x] When the user clicks the delete button for a card, the card disappears from the grid of cards.
-- [ ] **Deployment**
-  - [ ] Website is deployed via Render.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.
+- [x] **Deployment**
+  - [x] Website is deployed via Render.
+  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: For ease of grading, please use the deployed version of your website when creating your walkthrough.
 
 ####  Stretch Features
 
