@@ -3,7 +3,6 @@ import DeleteBoardButton from './DeleteBoardButton'
 import './HomePageComponentStyles/BoardCard.css'
 
 function BoardCard({ board, setBoards }) {
-
     return (
         <>
             <section className="BoardCard-view">
@@ -12,7 +11,7 @@ function BoardCard({ board, setBoards }) {
                 <p className="BoardCard-category">{board.category}</p>
 
                 <section className="BoardCard-buttons">
-                    <ViewBoardButton boardId={board.id} />
+                    <ViewBoardButton boardId={board.id} boardTitle={board.title} />
                     <DeleteBoardButton boardId={board.id} setBoards={setBoards} />
                 </section>
             </section>

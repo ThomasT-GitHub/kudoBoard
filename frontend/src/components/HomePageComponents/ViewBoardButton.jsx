@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router'
 
-function ViewBoardButton({ boardId }) {
+function ViewBoardButton({ boardId, boardTitle }) {
     const navigate = useNavigate();
 
     return (
         <>
-            <button className="view-board-button" onClick={() => navigate(`/BoardPage/${boardId}`)}>View Board</button>
+            <button className="view-board-button" onClick={() => navigate(`/BoardPage/${boardId}/${boardTitle}`)}>View Board</button>
         </>
     )
 }

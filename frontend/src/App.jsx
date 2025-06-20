@@ -9,7 +9,7 @@ function App() {
     <section className="App-view">
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/BoardPage/:id" element={<BoardPage />}/>
+        <Route path="/BoardPage/:boardId/:boardTitle" element={<BoardPage />}/>
       </Routes>
     </section>
   )

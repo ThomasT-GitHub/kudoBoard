@@ -13,8 +13,8 @@ function ImageCard({ imageCard }) {
                 </section>
 
                 <section className="Card-buttons">
-                    <UpvoteButton upvotes={imageCard.upvotes}/>
-                    <DeleteCardButton />
+                    <UpvoteButton imageCardId={imageCard.id} boardId={imageCard.parentBoardId} upvotes={imageCard.upvotes}/>
+                    <DeleteCardButton imageCardId={imageCard.id} />
                 </section>
             </section>
         </>

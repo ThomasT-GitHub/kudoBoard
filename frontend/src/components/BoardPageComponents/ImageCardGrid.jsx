@@ -1,12 +1,24 @@
 import ImageCard from "./ImageCard";
 import "./BoardPageComponentStyles/CardGrid.css"
+import { useState, useEffect } from 'react'
+import { getImageCardsOfBoard } from "../../../utils/utils";
 
-function CardGrid({ imageCardBelongingToBoard }) {
+function CardGrid({ boardId }) {
+    const [imageCards, setImageCards] = useState([]);
+
+    useEffect(() => {
+        (async () => {
+            const fetchedImageCards = await getImageCardsOfBoard(boardId);
+            setImageCards(fetchedImageCards);
+            console.log(fetchedImageCards)
+        })();
+    }, []);
+
     return (
         <>
             <section className="CardGrid-view">
-                {imageCardBelongingToBoard.map((imageCard) => {
-                    return <ImageCard key={imageCard.id} imageCard={imageCard}/>
+                {imageCards.map((imageCard) => {
+                    return <ImageCard key={imageCard.id} imageCard={imageCard} />
                 })}
             </section>
         </>
