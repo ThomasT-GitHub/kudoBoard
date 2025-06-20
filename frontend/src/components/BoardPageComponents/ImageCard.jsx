@@ -9,7 +9,7 @@ function ImageCard({ imageCard, setImageCards }) {
                 <h3 className="Card-title">{imageCard.title}</h3>
                 <p className="Card-message">{imageCard.message}</p>
                 <section className="Card-image-container">
-                    <img className="Card-image" src={imageCard.gif} alt={`${imageCard.title} image`} />
+                    <img className="Card-image" src={imageCard.imageSource} alt={`${imageCard.title} image`} />
                 </section>
 
                 <section className="Card-buttons">

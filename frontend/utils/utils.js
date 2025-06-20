@@ -205,20 +205,28 @@ export const decrementImageCardUpvotes = async (boardId, imageCardId) => {
  * @param {String} title        The title of the image card
  * @param {String} message      The message of the imageCard
  * @param {String} imageSource  The source of the image/gif of the new imageCard
+ * @param {String} author       The author of the new imageCard
  */
-export const addImageCardToBoard = async (boardId, title, message, imageSource) => {
+export const addImageCardToBoard = async (boardId, title, message, imageSource, author) => {
     const url = `${API_URL}/boards/${boardId}/imageCards/`;
+
+    const imageCardData = {
+        title: title,
+        message: message,
+        imageSource: imageSource,
+    }
+
+    if (author.length) {
+        imageCardData.author = author
+    }
+
     const options = {
         method: 'POST',
         headers: {
             "Content-Type": 'application/json',
             accept: 'application/json',
         },
-        body: JSON.stringify({
-            title: title,
-            message: message,
-            imageSource: imageSource
-        })
+        body: JSON.stringify(imageCardData)
     };
 
     try {
@@ -256,6 +264,26 @@ export const deleteImageCard = async (boardId, imageCardId) => {
 
         const data = await response.json();
         return data
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+/**
+ * This function returns an array of six gifs per a search query from giphy
+ * @param {string} searchQuery The query to search
+ */
+export const getSixGifsFromGiphy = async (searchQuery) => {
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=5VCUFjarr6oF3VYAEfm1AdDD0rZrM09u&q=${searchQuery}&limit=6`
+
+    try {
+        const response = await fetch(url);
+        if(!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data["data"];
     } catch (err) {
         console.error(err);
     }

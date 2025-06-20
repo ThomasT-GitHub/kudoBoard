@@ -10,7 +10,6 @@ function CardGrid({ boardId }) {
         (async () => {
             const fetchedImageCards = await getImageCardsOfBoard(boardId);
             setImageCards(fetchedImageCards);
-            console.log(fetchedImageCards)
         })();
     }, []);
 
