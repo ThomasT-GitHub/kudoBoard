@@ -4,7 +4,25 @@ const API_URL = import.meta.env.VITE_API_URL;
  * This function returns a list of boards
  */
 export const getBoards = async () => {
+    const url = `${API_URL}/boards/`;
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+        }
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 /**
@@ -12,7 +30,25 @@ export const getBoards = async () => {
  * @param {number} boardId The id of the board to return
  */
 export const getBoardById = async (boardId) => {
+    const url = `${API_URL}/boards/${boardId}/`;
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+        }
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 /**
@@ -22,7 +58,30 @@ export const getBoardById = async (boardId) => {
  * @param {String} imageSource  The source of the image/gif of the board
  */
 export const createBoard = async (title, category, imageSource) => {
+    const url = `${API_URL}/boards/`;
+    const options = {
+        method: 'POST',
+        headers: {
+            accept: 'application/json',
+        },
+        body: JSON.stringify({
+            title: title,
+            category: category,
+            imageSource: imageSource
+        })
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 /**
@@ -30,7 +89,25 @@ export const createBoard = async (title, category, imageSource) => {
  * @param {number} boardId The id of the board to delete
  */
 export const deleteBoard = async (boardId) => {
+    const url = `${API_URL}/boards/${boardId}/`;
+    const options = {
+        method: 'DELETE',
+        headers: {
+            accept: 'application/json',
+        }
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 /**
@@ -38,7 +115,25 @@ export const deleteBoard = async (boardId) => {
  * @param {number} boardId The id of the board to return the imageCards of
  */
 export const getImageCardsOfBoard = async (boardId) => {
+    const url = `${API_URL}/boards/${boardId}/imageCards/`;
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+        }
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 /**
@@ -47,7 +142,25 @@ export const getImageCardsOfBoard = async (boardId) => {
  * @param {number} imageCardId  The id of the imageCard to have the number of upvotes incremented
  */
 export const incrementImageCardUpvotes = async (boardId, imageCardId) => {
+    const url = `${API_URL}/boards/${boardId}/imageCards/${imageCardId}/incrementUpvotes/`;
+    const options = {
+        method: 'PATCH',
+        headers: {
+            accept: 'application/json',
+        }
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 /**
@@ -56,7 +169,25 @@ export const incrementImageCardUpvotes = async (boardId, imageCardId) => {
  * @param {number} imageCardId  The id of the imageCard to have the number of upvotes decremented
  */
 export const decrementImageCardUpvotes = async (boardId, imageCardId) => {
+    const url = `${API_URL}/boards/${boardId}/imageCards/${imageCardId}/decrementUpvotes/`;
+    const options = {
+        method: 'PATCH',
+        headers: {
+            accept: 'application/json',
+        }
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 /**
@@ -67,7 +198,30 @@ export const decrementImageCardUpvotes = async (boardId, imageCardId) => {
  * @param {String} imageSource  The source of the image/gif of the new imageCard
  */
 export const addImageCardToBoard = async (boardId, title, message, imageSource) => {
+    const url = `${API_URL}/boards/${boardId}/imageCards/`;
+    const options = {
+        method: 'POST',
+        headers: {
+            accept: 'application/json',
+        },
+        body: JSON.stringify({
+            title: title,
+            message: message,
+            imageSource: imageSource
+        })
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 /**
@@ -76,5 +230,23 @@ export const addImageCardToBoard = async (boardId, title, message, imageSource) 
  * @param {number} imageCardId  The id of the imageCard to delete
  */
 export const deleteImageCard = async (boardId, imageCardId) => {
+    const url = `${API_URL}/boards/${boardId}/imageCards/${imageCardId}/`;
+    const options = {
+        method: 'DELETE',
+        headers: {
+            accept: 'application/json',
+        }
+    };
 
+    try {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error("Failed to fetch data!");
+        }
+
+        const data = await response.json();
+        return data
+    } catch (err) {
+        console.error(err);
+    }
 }
