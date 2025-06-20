@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createBoard } from "../../../utils/utils";
 import './HomePageComponentStyles/CreateBoardButton.css'
 
-function CreateBoardButton({ setBoards }) {
+function CreateBoardButton() {
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [author, setAuthor] = useState("");
@@ -10,10 +10,7 @@ function CreateBoardButton({ setBoards }) {
 
     const handleBoardCreation = async () => {
         // Update the board remotely
-        const createdBoard = await createBoard(title, category, author);
-
-        // Update the board locally
-        setBoards((previousBoards) => [...previousBoards, createdBoard]);
+        await createBoard(title, category, author);
     }
 
     const showModal = () => {
@@ -27,11 +24,11 @@ function CreateBoardButton({ setBoards }) {
                 <form className="CreateBoardButton-form" onSubmit={handleBoardCreation}>
                 <label>
                     Title:
-                    <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
+                    <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} required/>
                 </label>
                 <label>
                     Category:
-                    <input type="text" name="category" onChange={(e) => setCategory(e.target.value)} />
+                    <input type="text" name="category" onChange={(e) => setCategory(e.target.value)} required/>
                 </label>
                 <label>
                     Author (OPTIONAL):

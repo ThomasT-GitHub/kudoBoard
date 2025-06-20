@@ -1,6 +1,6 @@
 import { getBoards } from "../../../utils/utils";
 
-function BoardGridFilter({ boards, setBoards, setRefreshBoards }) {
+function BoardGridFilter({ setBoards, setRefreshBoards }) {
 
     const BoardGridFilterOptions = {
         HOME: "home",

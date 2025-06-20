@@ -7,7 +7,7 @@ function CreateImageCardButton() {
     const [title, setTitle] = useState("");
     const [message, setMessage] = useState("");
     const [gifSearchQuery, setGifSearchQuery] = useState("");
-    const [gifUrl, setGifUrl] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
     const [gifsFromSearch, setGifsFromSearch] = useState([]);
     const [author, setAuthor] = useState("");
     const [modalShowing, setModalShowing] = useState(false);
@@ -21,7 +21,7 @@ function CreateImageCardButton() {
     }
 
     const handleImageCardCreation = async () => {
-        await addImageCardToBoard(boardId, title, message, gifUrl, author);
+        await addImageCardToBoard(boardId, title, message, imageUrl, author);
     }
 
     const showModal = () => {
@@ -36,11 +36,11 @@ function CreateImageCardButton() {
                 <form className="CreateImageCardButton-form">
                     <label>
                         Title:
-                        <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} />
+                        <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} required />
                     </label>
                     <label>
                         Message:
-                        <input type="text" name="message" onChange={(e) => setMessage(e.target.value)} />
+                        <input type="text" name="message" onChange={(e) => setMessage(e.target.value)} required />
                     </label>
                     <label>
                         Search Gifs:
@@ -48,16 +48,16 @@ function CreateImageCardButton() {
                         <button className="CreateImageCardButton-search-gifs" onClick={handlGifSearch}>Search Gifs</button>
 
                         <section className="CreateImageCardButton-gifs-container">
-                        {gifsFromSearch.map((gif, index) => (
-                            <img className="CreateImageCardButton-gifs" key={index} src={gif.images.fixed_height.url} width="200" height="200" onClick={(e) => {
-                                setGifUrl(e.target.src);
-                            }}></img>
-                        ))}
+                            {gifsFromSearch.map((gif, index) => (
+                                <img className="CreateImageCardButton-gifs" key={index} src={gif.images.fixed_height.url} width="200" height="200" onClick={(e) => {
+                                    setImageUrl(e.target.src);
+                                }}></img>
+                            ))}
                         </section>
                     </label>
                     <label>
-                        Gif URL:
-                        <input type="text" name="author" value={gifUrl} onChange={(e) => setGifUrl(e.target.value)} />
+                        Image URL:
+                        <input type="text" name="author" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required />
                     </label>
                     <label>
                         Author (OPTIONAL):

@@ -20,9 +20,9 @@ function HomePage() {
         <section className="HomePage-View">
             <header className="HomePage-Banner">
                 <h1>KUDOBOARD</h1>
-                <BoardGridSearch boards={boards} setBoards={setBoards} setRefreshBoards={setRefreshBoards} />
-                <BoardGridFilter boards={boards} setBoards={setBoards} setRefreshBoards={setRefreshBoards} />
-                <CreateBoardButton setBoards={setBoards} />
+                <BoardGridSearch setBoards={setBoards} setRefreshBoards={setRefreshBoards} />
+                <BoardGridFilter setBoards={setBoards} setRefreshBoards={setRefreshBoards} />
+                <CreateBoardButton />
             </header>
 
             <section className="HomePage-Body">
