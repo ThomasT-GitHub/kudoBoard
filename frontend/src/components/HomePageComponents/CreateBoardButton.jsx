@@ -22,20 +22,21 @@ function CreateBoardButton() {
             <button className="CreateBoardButton-show-modal-button" onClick={showModal}>Create Board</button>
             {modalShowing && <section className="CreateBoardButton-modal">
                 <form className="CreateBoardButton-form" onSubmit={handleBoardCreation}>
-                <label>
-                    Title:
-                    <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} required/>
-                </label>
-                <label>
-                    Category:
-                    <input type="text" name="category" onChange={(e) => setCategory(e.target.value)} required/>
-                </label>
-                <label>
-                    Author (OPTIONAL):
-                    <input type="text" name="author" onChange={(e) => setAuthor(e.target.value)} />
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+                    <button className="CreateBoardButton-close-modal-button" onClick={showModal}>X</button>
+                    <label>
+                        Title:
+                        <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} required />
+                    </label>
+                    <label>
+                        Category:
+                        <input type="text" name="category" onChange={(e) => setCategory(e.target.value)} required />
+                    </label>
+                    <label>
+                        Author (OPTIONAL):
+                        <input type="text" name="author" onChange={(e) => setAuthor(e.target.value)} />
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
             </section>}
 
         </>

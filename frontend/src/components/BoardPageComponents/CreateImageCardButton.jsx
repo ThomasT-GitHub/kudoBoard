@@ -34,6 +34,7 @@ function CreateImageCardButton() {
 
             {modalShowing && <section className="CreateImageCardButton-modal">
                 <form className="CreateImageCardButton-form">
+                    <button className="CreateBoardButton-close-modal-button" onClick={showModal}>X</button>
                     <label>
                         Title:
                         <input type="text" name="title" onChange={(e) => setTitle(e.target.value)} required />
