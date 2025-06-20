@@ -133,6 +133,7 @@ export const getImageCardsOfBoard = async (boardId) => {
         return Object.values(data)
     } catch (err) {
         console.error(err);
+        return [];
     }
 }
 

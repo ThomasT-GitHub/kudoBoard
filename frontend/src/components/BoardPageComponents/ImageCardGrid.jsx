@@ -18,7 +18,7 @@ function CardGrid({ boardId }) {
         <>
             <section className="CardGrid-view">
                 {imageCards.map((imageCard) => {
-                    return <ImageCard key={imageCard.id} imageCard={imageCard} />
+                    return <ImageCard key={imageCard.id} imageCard={imageCard} setImageCards={setImageCards} />
                 })}
             </section>
         </>
