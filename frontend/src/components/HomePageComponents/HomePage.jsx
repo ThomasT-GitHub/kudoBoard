@@ -19,12 +19,12 @@ function HomePage() {
         <section className="HomePage-View">
             <header className="HomePage-Banner">
                 <h1>KUDOBOARD</h1>
-                <BoardGridSearch />
-                <BoardGridFilter />
+                <BoardGridSearch boards={boards} setBoards={setBoards}/>
+                <BoardGridFilter boards={boards} setBoards={setBoards}/>
             </header>
 
             <section className="HomePage-Body">
-                <BoardCardGrid boardCardList={boards} />
+                <BoardCardGrid boards={boards} setBoards={setBoards}/>
             </section>
 
             <footer className="HomePage-Footer">
