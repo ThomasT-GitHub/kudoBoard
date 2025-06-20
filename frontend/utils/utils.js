@@ -1,5 +1,5 @@
 const API_URL = import.meta.env.VITE_API_URL;
-
+const GIPHY_API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
 /**
  * This function returns a list of boards
  */
@@ -274,7 +274,7 @@ export const deleteImageCard = async (boardId, imageCardId) => {
  * @param {string} searchQuery The query to search
  */
 export const getSixGifsFromGiphy = async (searchQuery) => {
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=5VCUFjarr6oF3VYAEfm1AdDD0rZrM09u&q=${searchQuery}&limit=6`
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${searchQuery}&limit=6`
 
     try {
         const response = await fetch(url);
