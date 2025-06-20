@@ -4,8 +4,10 @@ import BoardGridFilter from './BoardGridFilter'
 import BoardGridSearch from './BoardGridSearch'
 import './HomePageComponentStyles/HomePage.css'
 
-
 function HomePage() {
+
+
+
     return (
         <section className="HomePage-View">
             <header className="HomePage-Banner">
