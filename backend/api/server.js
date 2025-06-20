@@ -45,16 +45,12 @@ server.get('/api/boards/', async (req, res, next) => {
 server.post('/api/boards/', async (req, res, next) => {
     const newBoard = req.body;
     try {
-        const newBoardValid = (
-            newBoard.imageSource !== undefined &&
-            newBoard.title !== undefined &&
-            newBoard.category !== undefined
-        )
+        const newBoardValid = true
         if (newBoardValid) {
             const createdBoard = await prisma.board.create({ data: newBoard });
             res.json(createdBoard);
         } else {
-            next({ status: 422, message: `imageSource, title, and category are required!` });
+            next({ status: 422, message: `title, and category are required!` });
         }
     } catch (err) {
         next(err);

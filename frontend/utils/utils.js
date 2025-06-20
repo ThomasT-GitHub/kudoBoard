@@ -53,22 +53,30 @@ export const getBoardById = async (boardId) => {
 
 /**
  * This function create a board
- * @param {String} title        The title of the board
- * @param {String} category     The category of the board
- * @param {String} imageSource  The source of the image/gif of the board
+ * @param {String} boardTitle        The title of the board
+ * @param {String} boardCategory     The category of the board
+ * @param {String} boardAuthor       The author of the board (if none, leave blank)
  */
-export const createBoard = async (title, category, imageSource) => {
+export const createBoard = async (boardTitle, boardCategory, boardAuthor) => {
     const url = `${API_URL}/boards/`;
+
+    const boardData = {
+        title: boardTitle,
+        category: boardCategory,
+        imageSource: `https://picsum.photos/seed/${Math.floor(Math.random() * 100)}/200/300`
+    }
+
+    if (boardAuthor.length) {
+        boardData.author = boardAuthor
+    }
+
     const options = {
         method: 'POST',
         headers: {
-            accept: 'application/json',
+            "Content-Type": 'application/json',
+            accept: 'application/json'
         },
-        body: JSON.stringify({
-            title: title,
-            category: category,
-            imageSource: imageSource
-        })
+        body: JSON.stringify(boardData)
     };
 
     try {
@@ -203,6 +211,7 @@ export const addImageCardToBoard = async (boardId, title, message, imageSource) 
     const options = {
         method: 'POST',
         headers: {
+            "Content-Type": 'application/json',
             accept: 'application/json',
         },
         body: JSON.stringify({
