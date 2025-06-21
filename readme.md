@@ -135,7 +135,7 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://kudoboa
 
 ### Walkthrough Video
 
-`ADD_EMBEDDED_CODE_HERE`
+https://www.loom.com/share/ef29fbbbe72e4110abe0e82cad910d02?sid=ff5fda48-d431-4902-a458-144d699c13f2
 
 ### Reflection
 
