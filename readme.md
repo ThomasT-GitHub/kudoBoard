@@ -97,22 +97,22 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://kudoboa
       - [ ] Message body
       - [ ] Author (if specified)
   - [ ] Users can add multiple comments to a single card.
-- [ ] **Dark Mode**
-  - [ ] Users can toggle between light mode and dark mode using a button displayed on the:
-    - [ ] Home Page
-    - [ ] Board Pages
-  - [ ] When the button is clicked, the color theme switches to the opposite of the current mode.
-  - [ ] When dark mode is enabled:
-    - [ ] Text and icons use a light color
-    - [ ] The background uses a dark color
-    - [ ] Color contrast has at least a 4.5:1 ratio using this [color contrast checker](https://webaim.org/resources/contrastchecker/)
-  - [ ] When light mode is enabled:
-    - [ ] Text and icons use a dark color
-    - [ ] The background uses a light color
-    - [ ] Color contrast has at least a 4.5:1 ratio using this [color contrast checker](https://webaim.org/resources/contrastchecker/)
-  - [ ] The chosen mode (light or dark) persists when navigating from home page to board pages and vice versa.
-  - [ ] When the user first visits the site the theme defaults to light mode.
-  - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast in both light and dark mode. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it.
+- [x] **Dark Mode**
+  - [x] Users can toggle between light mode and dark mode using a button displayed on the:
+    - [x] Home Page
+    - [x] Board Pages
+  - [x] When the button is clicked, the color theme switches to the opposite of the current mode.
+  - [x] When dark mode is enabled:
+    - [x] Text and icons use a light color
+    - [x] The background uses a dark color
+    - [x] Color contrast has at least a 4.5:1 ratio using this [color contrast checker](https://webaim.org/resources/contrastchecker/)
+  - [x] When light mode is enabled:
+    - [x] Text and icons use a dark color
+    - [x] The background uses a light color
+    - [x] Color contrast has at least a 4.5:1 ratio using this [color contrast checker](https://webaim.org/resources/contrastchecker/)
+  - [x] The chosen mode (light or dark) persists when navigating from home page to board pages and vice versa.
+  - [x] When the user first visits the site the theme defaults to light mode.
+  - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast in both light and dark mode. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it.
 - [ ] **Pinned Cards**
   - [ ] Users can pin a card to the top of the board.
   - [ ] A Pin button is displayed on each card.
@@ -140,19 +140,20 @@ Deployed Application (**required**): [Kudos Board Deployed Site](https://kudoboa
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
-
+The labs absolutely helped me be ready for this assignment. The labs were very thorough in setting up Postgres, Prisma, React navigator, and how these tools would be used in our project. They were absolutely crucial for the entire project. The only thing I felt was not covered was how to implement a dark mode.
 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
-
+If I had more time I would had implemented the two other stretch features. I would have designed the project in such a way that it accounted for the eventual implementation of these features.
 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
-
+I believe the demo went well. There were somethings that didn't go as planned, such as Vite having a built in darkmode that was not present on my machine; however, I am glad that the presentation helpd highlight that the website needed to be tested on other sites.
 
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+I used the [React Router](https://reactrouter.com/) to make changing between "Home", "Liked", and "Watched" an easy process.
 
 ### Shout out
+Kevin and Jackson provided great help with implementing the light and dark mode toggle by giving me pointers as to how to manipulate the CSS of my website with JavaScript. I also recieved amazing code review from Heath, Chinmay and Karan which guided my approach for project 3. Lastly Greg was a great help with helping me deploy the site.
