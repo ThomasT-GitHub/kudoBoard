@@ -2,6 +2,7 @@ import BoardCardGrid from './BoardCardGrid'
 import BoardGridFilter from './BoardGridFilter'
 import BoardGridSearch from './BoardGridSearch'
 import CreateBoardButton from './CreateBoardButton'
+import LightAndDarkModeButton from '../../LightAndDarkModeButton'
 import './HomePageComponentStyles/HomePage.css'
 import { getBoards } from '../../../utils/utils'
 import { useEffect, useState } from 'react'
@@ -23,6 +24,7 @@ function HomePage() {
                 <BoardGridSearch setBoards={setBoards} setRefreshBoards={setRefreshBoards} />
                 <BoardGridFilter setBoards={setBoards} setRefreshBoards={setRefreshBoards} />
                 <CreateBoardButton />
+                <LightAndDarkModeButton />
             </header>
 
             <section className="HomePage-Body">
