@@ -12,6 +12,10 @@ function BoardGridSearch({ setBoards, setRefreshBoards }) {
     }
 
     const handleBoardSearchClear = () => {
+        if (boardSearchQuery === "") {
+            return;
+        }
+
         setBoardSearchQuery("");
 
         // Increments refreshBoard value, which causes HomePage to set the boards to defaults
