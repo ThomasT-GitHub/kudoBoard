@@ -1,6 +1,7 @@
 import { useParams } from 'react-router'
 import CreateImageCardButton from './CreateImageCardButton';
 import ImageCardGrid from './ImageCardGrid'
+import LightAndDarkModeButton from '../../LightAndDarkModeButton';
 
 function BoardPage() {
     const boardId = useParams().boardId;
@@ -12,6 +13,7 @@ function BoardPage() {
                 <h1>KUDOBOARD</h1>
                 <h2>{boardTitle}</h2>
                 <CreateImageCardButton />
+                <LightAndDarkModeButton />
             </header>
 
             <section className="BoardPage-body">
